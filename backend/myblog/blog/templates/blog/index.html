@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="blink">Bienvenue sur mon blog rétro gaming!</h1>
+<div class="navbar">
+    <div class="logo"></div>
+</div>
+<button onclick="playSound()">Cliquez-moi</button>
+<audio id="click-sound" src="{% static 'audio/click.mp3' %}"></audio>
+{% endblock %}

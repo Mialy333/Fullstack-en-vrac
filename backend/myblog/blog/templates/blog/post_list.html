@@ -1,0 +1,52 @@
+<!-- blog/templates/blog/post_list.html -->
+
+{% extends "blog/base.html" %}
+
+{% block title %}Blog - Home{% endblock %}
+
+{% block content %}
+<h1>Fullstack en vrac</h1>
+<form method="GET" action="{% url 'search' %}">
+    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+{% for post in page_obj %}
+
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+        <p class="text-muted">Published on {{ post.created_at }}</p>
+        <p class="text-muted">Updated on {{ post.updated_at }}</p>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<div class="pagination">
+    <nav>
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+            </li>
+            {% endif %}
+
+            <li class="page-item active">
+                <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+            </li>
+
+            {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+<a class="btn btn-primary" href="{% url 'post_new' %}">New post</a>
+{% endblock %}

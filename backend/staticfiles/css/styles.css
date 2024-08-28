@@ -1,0 +1,51 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #bb92cd;
+    color: black
+}
+
+h1,
+h2,
+h3 {
+    color: #000000;
+    /* Rouge pour les titres */
+}
+
+.navbar {
+    background-color: #333;
+    border-bottom: 2px solid #c9cbcb;
+    /* Jaune néon */
+}
+
+.logo {
+    background: url('/static/images/logo.png') no-repeat;
+    width: 64px;
+    /* Largeur de votre sprite */
+    height: 64px;
+    /* Hauteur de votre sprite */
+}
+
+.button {
+    background: url('/static/images/button.png') no-repeat;
+    width: 128px;
+    height: 32px;
+    display: inline-block;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}

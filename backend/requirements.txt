@@ -1,0 +1,3 @@
+django
+django-environ
+# Ajoutez d'autres dépendances ici

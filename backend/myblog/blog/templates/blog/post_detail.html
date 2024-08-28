@@ -1,0 +1,34 @@
+<!-- blog/templates/blog/post_detail.html -->
+
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+{% if post.image %}
+<img src="{{ post.image.url }}" alt="Post Image">
+{% endif %}
+{% if post.file %}
+<a href="{{ post.file.url }}">Download File</a>
+{% endif %}
+<p class="text-muted">Published on {{ post.created_at }}</p>
+<h2>Comments</h2>
+{% for comment in post.comments.all %}
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>{{ comment.author }}</strong></p>
+        <p>{{ comment.text }}</p>
+        <p class="text-muted">Published on {{ comment.created_at }}</p>
+    </div>
+</div>
+{% endfor %}
+<h2>Add a new comment</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add comment</button>
+</form>
+<a class="btn btn-secondary mt-3" href="{% url 'post_edit' pk=post.pk %}">Edit</a>
+{% endblock %}
