@@ -108,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
 ]
