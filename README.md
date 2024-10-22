@@ -10,13 +10,17 @@
 ## Install
 
 ```sh
-Créer l'environnement: aller sur le projet BLOG, puis tapez &#34;cd backend&#34;. Ensuite sur la racine backend, tapez &#34;source env/bin/activate&#34;.  
+python3 -m pip install Django
+ 
 ```
 
 ## Usage
 
 ```sh
-Sur la racine backend, tapez &#34;python3 manage.py runserver&#34;. Enfin cliquez sur http://127.0.0.1:8000/
+Créer l'environnement: projet BLOG >> cd backend.
+Ensuite sur la racine backend >> source env/bin/activate. 
+Puis tapez python3 manage.py runserver.
+Cliquez sur http://127.0.0.1:8000/
 ```
 
 ## Run tests
