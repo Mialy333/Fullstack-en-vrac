@@ -35,7 +35,7 @@ En cours de réalisation
 
 * Website: https://mialy-ratsimbazafy-portfolio.vercel.app
 * Github: [@Mialy333](https://github.com/Mialy333)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/mialyratsimbazafy75\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/mialyratsimbazafy75\/)
+* LinkedIn: [@Mialy RATSIMBAZAFY](https://www.linkedin.com/in/mialyratsimbazafy75/)
 
 ## Show your support
 
